@@ -14,7 +14,7 @@ Sliding window can be used to solve many substring problems. Anytime you have to
 5           while constraint not satisfied:
 6               increment leftBound
 7               check if constraint satisied
-
+```
 
 # TODO
 0. Arrays
