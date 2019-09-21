@@ -1,6 +1,22 @@
 # This repo will be used to review for algorithms
 
-# Good topics to go over
+# Sliding window
+Sliding window is a technique used to turn O(n^2) solutions to O(n). This technique is used on String and Array problems where the problem asks you to find a "substring" or "subarray" that meets some kind of criteria
+
+## Sliding window to find substrings
+Sliding window can be used to solve many substring problems. Anytime you have to find a substring that meets some kind of criteria chances are you can use the sliding-window technique to sovle it
+
+```
+1   procedure(String S):
+2       leftBound = 0
+3       for character in S:
+4           process character
+5           while constraint not satisfied:
+6               increment leftBound
+7               check if constraint satisied
+
+
+# TODO
 0. Arrays
     a. sliding window
     b. prefix sum
@@ -56,14 +72,3 @@ These are good to have
 4. Bit manipulation
 5. Disjoin set (union find)
 6. Djikstra/floyd warshall algorithm
-
-#Behavorial
-1. Understand how to answer the behavorial questions
-2. Why do you want to work for this company?
-3.  
-
-#Todo
-1.Do A bunch of leetcode problems
-2.master dynamic programming
-3.Learn greedy algorithms
-4.Get better at behavorial questions   
