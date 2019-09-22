@@ -73,9 +73,19 @@ Good Problems to do
 3. Fruits in a basket
 
 # Dynamic Programming
-Dynamic programmign is a technique used to optimize redundant computation by caching the results(usually into an array or matrix). Two properties that DP problems have are
+Dynamic Programming is a technique used to optimize redundant computation by caching the results(usually into an array or matrix).  
 1. **Overlapping subproblems**
 2. **Optimal substructure**
+
+## Dynamic programming using Memoization 
+Template for solving dynamic programming questions using memoization
+```
+1   procedure(n):
+2       if Basecase then return
+3       if n is already computed return cache[n]
+4           result = call recursive function 
+5           store result
+```
 
 
 # TODO

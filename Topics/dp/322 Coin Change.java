@@ -1,20 +1,35 @@
+// Backtracking approach
+// Falls under the category of if you know n - 1 how can you use to solve for n
+class Solution {
+    public int coinChange(int[] coins, int amount) {
+        if(amount == 0) return 0;
+        if(amount < 0) return -1;
+        int min = Integer.MAX_VALUE;
+        for(int i = 0; i < coins.length; i++){
+            int res = coinChange(coins, amount - coins[i]);
+            if(res != -1) min = Math.min(res, min);
+        }
+        if(min == Integer.MAX_VALUE) return -1;
+        else return min + 1;
+    }
+}
+
+//Dynamic programming appraoch
 class Solution {
     public int coinChange(int[] coins, int amount) {
         int[] dp = new int[amount + 1];
-        dp[0] = 0;
-        
-        for(int i = 1; i <= amount; i++){
-            int currentMin = Integer.MAX_VALUE;
-            //Iterate through all the coins
-            for(int coin : coins){
-                // We ignore all results that are -1, and take the min
-                if(i - coin >= 0 && dp[i - coin] != -1){
-                    currentMin = Math.min(currentMin, dp[i - coin]);
+        for(int i = 1; i < dp.length; i++){
+            int min =  Integer.MAX_VALUE;
+            for(int j = 0; j < coins.length; j++){
+                // Checks if we are still within the bounds
+                if(i - coins[j] >= 0){
+                    min = Math.min(min, dp[i - coins[j]]);
                 }
-                // If all the results were -1 then we return -1, otherwise we increment the value by 1
-                dp[i] = currentMin == Integer.MAX_VALUE ? -1 : 1 + currentMin;
             }
+            if(min == Integer.MAX_VALUE) dp[i] = min;
+            else dp[i] = 1 + min;
         }
-        return dp[amount];
+        if(dp[amount] == Integer.MAX_VALUE) return -1;
+        else return dp[amount];
     }
 }
