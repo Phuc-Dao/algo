@@ -66,11 +66,26 @@ public int totalFruit(int[] tree) {
     return maxCount;
 }
 ```
-
-Good Problems to do
+**Good Problems to do**
 1. Longest substring with unique characters
 2. Minimum window substring
 3. Fruits in a basket
+
+# Graph
+
+## Detecting Cycles in undirected graph
+For every node Curr, if there is a neighbor node n that is not the parent of curr and already visited then we have a cycle. 
+**Note:** We are passing a parent pointer in function call so we dont revisit the parent. We are also checking if it is already visited on line 2 for readability. If we wanted to gain minor performance gains consider adding the check within the for loop instead
+
+```
+1   hasCycle(Node curr, visted, Node parent):
+2.      if curr already visited return True
+3.      add curr to visited set
+4.      for Neighbor n of curr :
+5.         if n not parent and hasCycle(n, visited, curr):
+6.              return True
+7.      return False
+```
 
 # Dynamic Programming
 Dynamic Programming is a technique used to optimize redundant computation by caching the results(usually into an array or matrix).  
@@ -86,7 +101,6 @@ Template for solving dynamic programming questions using memoization
 4       result = call recursive function 
 5       store result in cache
 ```
-
 
 # TODO
 1. Arrays
