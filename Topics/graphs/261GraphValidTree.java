@@ -1,8 +1,13 @@
+/*Approach: A Graph is a tree if it meets the following requirments
+ * 1. There are no cycles
+ * 2. All Nodes are reachable
+ */
 class Solution {
     public boolean validTree(int n, int[][] edges) {
         HashMap<Integer, List<Integer>> map =  generateGraph(n, edges);
         HashSet<Integer> visited = new HashSet<>();
-        // Iterate through every edge and check if there is a cycloe
+        
+        // Use dfs to check if there are any cycles starting from node 0
         if(detectCycles(map, visited, -1, 0)) return false;;
         
         //Check if every node has been visited
@@ -15,12 +20,12 @@ class Solution {
     
     // Using dfs for cycle detection
     boolean detectCycles(HashMap<Integer, List<Integer>> map, HashSet<Integer> visited, int parent, int curr ){
-        if(visited.contains(curr)) return true; //Check if it has already been visited
-        visited.add(curr); //Mark current node as visited
+        // Check if the node has already been visited. 
+        if(visited.contains(curr)) return true;
+        // Mark current node as visited
+        visited.add(curr);
         List<Integer> neighbor = map.get(curr);
         for(Integer n : neighbor){
-            // If the neighbor is not the parent and 
-            //if((visited.contains(n) && n != parent) || (n != parent && detectCycles(map, visited, curr, n))) return true;
             if(n != parent){
                 if(detectCycles(map, visited, curr, n)) return true;
             }
@@ -28,6 +33,7 @@ class Solution {
         return false;
     }
     
+    // Helper function that creates the adjacency list
     private HashMap<Integer, List<Integer>> generateGraph(int n, int[][] edges){
         HashMap<Integer, List<Integer>> map = new HashMap<>();
         
@@ -41,5 +47,4 @@ class Solution {
         }
         return map;
     }
-    
 }
