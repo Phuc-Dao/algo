@@ -83,8 +83,8 @@ Template for solving dynamic programming questions using memoization
 1   procedure(n):
 2       if Basecase then return
 3       if n is already computed return cache[n]
-4           result = call recursive function 
-5           store result
+4       result = call recursive function 
+5       store result in cache
 ```
 
 
