@@ -87,6 +87,26 @@ For every node Curr, if there is a neighbor node n that is not the parent of cur
 7.      return False
 ```
 
+## Detecting Cycles in directed graph
+Detecting cycles in a directed graph is a little that undirected graph. To detect cycles perform standard dfs however, if we revisit a previous node already visited before we visit all of its childrens then there is a cycle
+
+```java
+// Rec is a set to remember which nodes we are currently visiting
+// Visited is a set to remember which node we already visited
+boolean hasCycle(int curr, HashMap<Integer, List<Integer>> map, HashSet<Integer> visited, HashSet<Integer> rec){
+        if(rec.contains(curr)) return true;
+        visited.add(curr);
+        rec.add(curr);
+        List<Integer> neighbors = map.get(curr);
+        for(int n : neighbors){
+            if(hasCycle(n, map, visited, rec)) return true; 
+        }
+        // Remove the current node from rec because we alreay visited it
+        rec.remove(curr);
+        return false;
+    }
+```
+
 # Dynamic Programming
 Dynamic Programming is a technique used to optimize redundant computation by caching the results(usually into an array or matrix).  
 1. **Overlapping subproblems**
