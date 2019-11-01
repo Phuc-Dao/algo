@@ -1,8 +1,24 @@
+# Greedy Problems
+1. Partition Labels
+
+# Interval Problems
+1. Merge Intervals
+2. Meeting rooms
+3. 
+
+# Binary Tree Problems
+1. Use a queue when you want to process each node level by level
+    a. 103 binary tree zig-zag, 987 Vertical order traversal 
+
+
+
+# Binary Search Tree's
+
 # Sliding window
 Sliding window is a technique used to turn O(n^2) solutions to O(n). This technique is used on String and Array problems where the problem asks you to find a "substring" or "subarray" that meets some kind of criteria
 
 ## Sliding window to find substrings and subarrays
-Sliding window can be used to solve many substring problems. Anytime you have to find a substring or subarray that meets some kind of criteria chances are you can use the sliding-window technique to sovle it. Here is a basic template to solve string problems using sliding window
+Sliding window can be used to solve many substring problems. Anytime you have to find a substring or subarray that meets some kind of criteria chances are you can use the sliding-window technique to sovle it. Here is a basic template to solve string problems using sliding window. 
 
 ```
 1   procedure(String S):
@@ -38,7 +54,7 @@ public int lengthOfLongestSubstring(String s) {
     return longest;
 }
 ```
-Here is an  example of using sliding window to solve the subarray problem **Fruits in a Basket**
+Here is an  example of using sliding window to solve the subarray problem **Fruits in a Basket** which gets reduced down to "find the longest subarray with at most 2 unique elements
 
 ```java
 public int totalFruit(int[] tree) {
@@ -70,6 +86,8 @@ public int totalFruit(int[] tree) {
 1. Longest substring with unique characters
 2. Minimum window substring
 3. Fruits in a basket
+
+**Important: Sliding window works on problems that looks to minimize or maximize a contiguous list. It breaks down when you have to find possible sublist. For those types of problems consider using prefix**
 
 # Graph
 
@@ -107,6 +125,11 @@ boolean hasCycle(int curr, HashMap<Integer, List<Integer>> map, HashSet<Integer>
     }
 ```
 
+## Shortest Path in unweighted graph
+If the problem asks for finding the shortest path or minimum number of steps in a grid or in a graph then most likely it is looking for bfs. Implement dfs with a queue.
+
+
+
 # Dynamic Programming
 Dynamic Programming is a technique used to optimize redundant computation by caching the results(usually into an array or matrix).  
 1. **Overlapping subproblems**
@@ -121,6 +144,12 @@ Template for solving dynamic programming questions using memoization
 4       result = call recursive function 
 5       store result in cache
 ```
+
+## Backtracking Dynamic programming
+Some backtracking problems can be solved using dynamic programming. This is when the backtracking problems revisits recurring branches. These problems can be easily solved using a top-down cache or a bottom-up dp (Typically harder). Note that not all backtracking problems can be solved with DP. For example N-queens problem has no recurring subproblems
+1. **Regular expression matching**
+2. **Wild card matching**
+
 
 # TODO
 1. Arrays

@@ -1,5 +1,6 @@
 // The approach is to get the left boundary, the leaves of the left subtree, the leaves of right subtree 
 // and right boundary seperately
+// Takeaway: You can segment each portion of the tree individually and then combine the results at the end
 class Solution {
     public List<Integer> boundaryOfBinaryTree(TreeNode root) {
         List<Integer> list = new ArrayList<>();
