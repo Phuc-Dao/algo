@@ -1,5 +1,11 @@
+/*
+ * Define dp(i) to be the min coins to make amount i
+ * Basecase: dp(0) = 0 => When we have 0 change there is zero ways to make it
+ * Recurrance relation: dp(i) = min( dp(i - c_j) ) for all coins c_j that are less than or equal to i
+ * See images for diagram
+ */
+
 // Backtracking approach
-// Falls under the category of if you know n - 1 how can you use to solve for n
 class Solution {
     public int coinChange(int[] coins, int amount) {
         if(amount == 0) return 0;
@@ -14,7 +20,30 @@ class Solution {
     }
 }
 
-//Dynamic programming appraoch
+// Memoization approach
+class Solution {
+    public int coinChange(int[] coins, int amount){
+        int val = memoization(coins, amount, new Integer[amount + 1]);
+        if(val == Integer.MAX_VALUE) return -1;
+        return val;
+    }
+    
+    public int memoization(int[] coins, int amount, Integer[] memo){
+        if(amount == 0) return 0;
+        if(memo[amount] != null) return memo[amount];
+        int minVal = Integer.MAX_VALUE;
+        for(int i = 0; i < coins.length; i++){
+            if(coins[i] <= amount){
+                minVal = Math.min(minVal, memoization(coins, amount - coins[i], memo));
+            }
+        }
+        if(minVal == Integer.MAX_VALUE) return memo[amount] = minVal;
+        return memo[amount] = 1 + minVal;
+    }    
+}
+
+
+// //Dynamic programming appraoch
 class Solution {
     public int coinChange(int[] coins, int amount) {
         int[] dp = new int[amount + 1];

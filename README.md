@@ -10,8 +10,6 @@
 1. Use a queue when you want to process each node level by level
     a. 103 binary tree zig-zag, 987 Vertical order traversal 
 
-
-
 # Binary Search Tree's
 
 # Sliding window
@@ -106,7 +104,7 @@ For every node Curr, if there is a neighbor node n that is not the parent of cur
 ```
 
 ## Detecting Cycles in directed graph
-Detecting cycles in a directed graph is a little that undirected graph. To detect cycles perform standard dfs however, if we revisit a previous node already visited before we visit all of its childrens then there is a cycle
+Detecting cycles in a directed graph is a little more involved than an undirected graph. To detect cycles perform standard dfs however, if we revisit a previous node already visited before we visit all of its childrens then there is a cycle
 
 ```java
 // Rec is a set to remember which nodes we are currently visiting
@@ -128,8 +126,6 @@ boolean hasCycle(int curr, HashMap<Integer, List<Integer>> map, HashSet<Integer>
 ## Shortest Path in unweighted graph
 If the problem asks for finding the shortest path or minimum number of steps in a grid or in a graph then most likely it is looking for bfs. Implement dfs with a queue.
 
-
-
 # Dynamic Programming
 Dynamic Programming is a technique used to optimize redundant computation by caching the results(usually into an array or matrix).  
 1. **Overlapping subproblems**
@@ -145,11 +141,16 @@ Template for solving dynamic programming questions using memoization
 5       store result in cache
 ```
 
-## Backtracking Dynamic programming
-Some backtracking problems can be solved using dynamic programming. This is when the backtracking problems revisits recurring branches. These problems can be easily solved using a top-down cache or a bottom-up dp (Typically harder). Note that not all backtracking problems can be solved with DP. For example N-queens problem has no recurring subproblems
+# Backtracking
+Note 1: Usually Backtracling considers one index at a time 
+
+## Using Dynamic programming to optimize backtracking
+Some backtracking problems can be optimized using dynamic programming. This is when the backtracking problems revisits recurring branches. These problems can be easily solved using a top-down cache or a bottom-up dp (Typically harder). Note that not all backtracking problems can be solved with DP. For example N-queens problem has no recurring subproblems
 1. **Regular expression matching**
 2. **Wild card matching**
+3. 
 
+# Minimum Spanning Tree
 
 # TODO
 1. Arrays
