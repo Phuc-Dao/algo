@@ -12,6 +12,7 @@
     - Consider n = 5, if we let the root node be 3, then the number of nodes on the left is 2 (1,2), and the number of nodes on the right side is 2 (4,5). So we multiply these two recursions. Do this for every possible configuration of the root nodes
     - G(n) = \sum_i=0^n G(i - 1) * G(n - i)
 * Understand divide and conquer on tree's. Sometimes you need to solve the left subtree and right subtree and combine them together in the end.
+* Approach tree problems by thinking about small simple cases
 
 ### Other useful tips
 * Be careful how you define your base case, sometimes you don't want to recurse all the way to the null children. Sometimes you want to stop at the leaf.
@@ -44,9 +45,6 @@ void totalPathSum(Node root, int currentSum){
 }
 
 ```
-
-
-
 ### The basics
 * Use these sources to refresh on tree's and binary tree's
     - https://medium.com/basecs/leaf-it-up-to-binary-trees-11001aaf746d

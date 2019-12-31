@@ -3,6 +3,15 @@
 ## Merge interval
 The merge interval problems are problems where we have to make every partition of the list and find the max over all possible partitions. Usually these problems can be optimized using dynamic programming
 
+### Related problems
+* 95 Unique BInary Search Tree
+* 96 Unique Binary Search Tree II
+* 1130 Mimumin cost Tree from From Leaf Values
+* Burst Balloons
+* Min cost to merge stones
+* Remove Boxes
+* Matrix chain mulitplication
+
 ### 95. Unique Binary Search Tree II
 ```
 Given an integer n, generate all structurally unique BST's (binary search trees) that store values 1 ... n. Return a list of root nodes
@@ -106,9 +115,19 @@ class Solution {
             max = Math.max(max, arr[i]);
         }
         return max;
-    }
-    
-    
+    }  
 }
 ```
 
+### Matrix-chain Multiplication
+```
+Given a sequence of matrices A1, A2, A3, ..., An, find the best way (using the minimal number of multiplications) to compute their product.
+```
+
+First try out a small example to get a feel for the problem. Consider the matrices A = (1,2), B = (2,3) and C = (3,4). Then the possible mutliplications are 
+* (AB)C
+* A(BC)
+
+#### test 
+
+We know that recursively on the last step we are going to multiply some matrix on the left side by some matrix on the right side.
