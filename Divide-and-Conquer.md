@@ -128,6 +128,6 @@ First try out a small example to get a feel for the problem. Consider the matric
 * (AB)C
 * A(BC)
 
-#### test 
+#### Defining the probem recursively 
 
-We know that recursively on the last step we are going to multiply some matrix on the left side by some matrix on the right side.
+We know that recursively on the last step we are going to multiply some matrix on the left side by some matrix on the right side. The two matrices L and R can be any multiplication 

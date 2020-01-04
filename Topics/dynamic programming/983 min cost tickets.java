@@ -31,8 +31,6 @@ class Solution {
     }
     
 }
-
-
 // Iterative solution
 class Solution {
     public int mincostTickets(int[] days, int[] costs) {
