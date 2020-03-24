@@ -15,7 +15,7 @@
 * Approach tree problems by thinking about small simple cases
 
 ### Other useful tips
-* Be careful how you define your base case, sometimes you don't want to recurse all the way to the null children. Sometimes you want to stop at the leaf.
+* Carefully think of the stopping condition of the recursion
     - For example in finding the sum to every path from root to leaf, we keep a running sum and add it to the total global variable at the end.
 
 ```
@@ -67,3 +67,7 @@ void totalPathSum(Node root, int currentSum){
 ### Flattening a Tree
 * Understand that when you flatten a tree into an array (using pre, post or inorder traversal) what the regions in the array represents. For example in inorder traversal, if the tree is
 
+### Full Tree
+* A Unique property of a full tree is that you can use the index of the parent to find the child and vice versa. Left Child is  2*(parentIndex).
+* Right Child is 2*(parentIndex) + 1
+    - 662 Max width of binary tree

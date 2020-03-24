@@ -3,6 +3,7 @@
 ## Dynamic Programming and Strings
 * Edit distance
 * Wildcard matching
+* interleaving strings
 
 ## Dependent states
 In problems where the states are dependent on each other we can use multiple dp arrays to hold the values for each state.
@@ -82,3 +83,9 @@ class Solution {
     }
 }
 ```
+
+## Dynamic programming and matrix
+These problems involve a matrix with rows and columns. The states are usually the rows and columns. Sometimes there may be a third state introduced.
+
+* 688 Knight probability
+* max path
