@@ -1,21 +1,53 @@
-class Solution:
-    def restoreIpAddresses(self, s: str) -> List[str]:
-        res = []
-        self.helper(s, 0, "", 0, "", res)
-        return res
+#Initializing dummy nodes in python
+class ListNode:
+    def __init(self, value):
+        self.val = value
+        self.prev = None
+        self.next = None
+
+class MaxStack:
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.head = ListNode(-1)
+        self.tail = self.head
+        self.max_heap = []    
+        
+    def push(self, x):
+        self.tail.next = ListNode(x)
+        tail = tail.next
+        heapq.heappush(self.max_heap, (-x, tail))
+        
+    def pop(self):
+        top = tail
+        if(top == self.max_heap[0][1]):
+            heapq.heappop(self.max_heap)
+        tail = tail.prev
+        tail.next = None
+        return top.val
     
-    def helper(self, s, idx, prev, num_dots, curr, res):
-        if(num_dots > 3) or len(prev) > 3 or (prev != "" and int(num_dots) > 255):
-            return
-        if(idx == len(s) and num_dots == 3):
-            if(len(prev) > 3):
-                return
-            res.append(curr)
-            return
-        if(idx == len(s)):
-            return
-        print(prev)
-        curr = curr + s[idx];
-        prev = prev + s[idx]
-        self.helper(s, idx + 1, "", num_dots + 1, curr + ".", res)
-        self.helper(s, idx + 1, prev, num_dots, curr, res)
+    def top(self):
+        return tail.val
+
+    def peekMax(self):
+        if not self.max_heap:
+            return -1
+        return heapq[0][0]
+
+    def popMax(self):
+        top = heapq.heappop(self.max_heap)[1]
+        top.prev.next = top.next
+        if top.next:
+            top.next.prev = top.prev
+        return top.val
+        
+m = MaxStack()
+
+# Your MaxStack object will be instantiated and called as such:
+# obj = MaxStack()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.peekMax()
+# param_5 = obj.popMax()
