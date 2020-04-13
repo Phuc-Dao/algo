@@ -1,3 +1,6 @@
+'''
+Flatten multi-level linked list. Uses a stack instead of recursion 
+'''
    def flatten(self, head: 'Node') -> 'Node':
         stack = collections.deque()
         curr = head

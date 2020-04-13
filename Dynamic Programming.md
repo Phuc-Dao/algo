@@ -5,7 +5,7 @@
 * Wildcard matching
 * interleaving strings
 
-## Dependent states
+## inDependent states
 In problems where the states are dependent on each other we can use multiple dp arrays to hold the values for each state.
 * 714 Best time to buy and sell stocks with transaction fee
 * 151 Max product subarray

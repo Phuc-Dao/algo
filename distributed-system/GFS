@@ -1,0 +1,46 @@
+Master
+- Handles all the chunks
+- Single Master
+- Handles chunk creation (64 mb)
+- Stores all metadata
+- Periodically sends heartbeats to the chunk servers to update state
+
+Master holds 2 data structures
+- Filename -> Array of chunk Handles
+    - Written to disk because there is no other place to get it
+- chunkHandle -> metadata on that chunk (list of chunkservers
+                                         version # - Written to disk
+                                         identity of Primary - NOT written to disk, 
+                                         Lease Experiation  - ON DISK
+)
+
+Log - stores state of the master - written to disk
+- Does checkpointing in case it fails, it reads from the most recent checkpoint
+
+Chunk Server
+- Holds the chunks of the file 
+- Replicated across other chunk servers for fault tolerance
+
+Reads
+-------
+1. FIrst Name and offset -> Master
+2. Master returns chunk handle and list of servers that holds that chunk (Use the one closest)
+3. Client caches the chunk servers for that specific chunk
+4.Client talks to chunk server and gets the data to the file
+
+Writes
+-------
+No primaries on master
+    1. Find up to data replica
+    2. Find up to date replicas
+    3. Assigns one to primary, secondary
+    4. Increment version number
+    5. Assign a lease to a primary (So we don't have primary for to long)
+        Consider the case when a primary is alive but but the network fails, and the master can't talk to the 
+        primary, Assignign a new primary would be wrong because then we would have to primaries writing(split brain)
+        so that is why we have a lease, the master will wait for the lease to expire before it can assign a new primary
+
+Has primaries
+    Primary writes to all secondaries
+    if ALL succeeds then return YES
+    otherwise return NO keep resending the messages

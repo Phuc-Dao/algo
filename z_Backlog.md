@@ -14,8 +14,6 @@ see if it was off by one character
 2. Reorganize string
 * This problem is very similar to task schedular
 * This problem is also similar to rearange strings k distance apart
-
-
 * Initally thought it was backtracking,
 * Go through every possible permutation and when we reach the end, then we are done
     -   This will work but we are doing an unecissary work
@@ -31,3 +29,6 @@ see if it was off by one character
 * Use that fact that it is a full binary tree. Index of left child is 2*(parent) and right child is 2*(parent) + 1
 * So now we just have to store the offset of the parent somewhere (hashmap)
 
+5. Queue reconstruction by height
+- Did not realize it was greey. The trick is to guess greedy. When you do greedy there is some kind of an invariant of using the tallest or shortest that holds
+that helps you solve the problem 

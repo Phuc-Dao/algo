@@ -1,0 +1,14 @@
+Lecture 2
+
+Coordination
+Making threads wait for each other (One executes right after another)
+Handled with 
+ - Go Channels
+ - condition variables
+ - wait groups
+
+ Deadlock
+ Thread one waiting for result from thread 2 but thread
+ 2 is waiting for thread 1. Then there is a Deadlock
+
+ 

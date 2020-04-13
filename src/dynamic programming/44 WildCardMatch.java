@@ -27,17 +27,14 @@ class Solution {
         dp[sidx][pidx] = res;
         return dp[sidx][pidx];   
     }
-    
     public boolean isMatch(String s, String p) {
         Boolean[][] dp = new Boolean[s.length() + 1][p.length()+ 1];
         return helper(s, p , 0, 0, dp);
     }
 }
 
-
 // Recursive implementation'
 class Solution {
-    
     boolean helper(String s, String p, int sidx, int pidx, Boolean[][] dp){
         if(sidx == s.length() && pidx == p.length()) return true;
         if(pidx == p.length()) return false;
@@ -46,7 +43,6 @@ class Solution {
         if(p.charAt(pidx) == '*') return helper(s, p, sidx + 1, pidx, dp) || helper(s, p, sidx, pidx + 1, dp);
         if(s.charAt(sidx) == p.charAt(pidx) || p.charAt(pidx) == '?') return helper(s, p, sidx + 1, pidx + 1, dp);
         return false;
-        
     }
     
     public boolean isMatch(String s, String p) {
