@@ -4,7 +4,7 @@ from collections import deque
 Approach:
 
 Do bfs from each of the buildings each time you visit a 0 sqaare, add the number of iterations it took to get to that square.
-Then at the end, iterate through the grid and find the square with the minimum distance that was touched by all buildings
+Then at the end, iterate through the grid and find the square (0) with the minimum distance that was touched by all buildings.
 
 """
 
