@@ -1,6 +1,5 @@
 '''
 325 max size subarray sum equals k
-Approach similar to contiguous subarray
 '''
 class Solution(object):
     def maxSubArrayLen(self, nums, k):

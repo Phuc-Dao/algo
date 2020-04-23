@@ -1,3 +1,7 @@
+/*
+ * Implementation of the classical matrix chain multiplication problem
+ * 
+ */
 class MatrixChain{
     // Tkaes in as input a list of arrays of size 2, 
     public static int getOptimalChain(int[][] m, int i, int j) {

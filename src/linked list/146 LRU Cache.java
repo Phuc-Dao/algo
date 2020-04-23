@@ -43,7 +43,7 @@ class LRUCache {
         return removed.value;
     }
     
-    //Implement the put
+    //Implement the pcut
     public void put(int key, int value) {
         if(!map.containsKey(key)){
             if(numNodes == capacity){
@@ -80,7 +80,7 @@ class LRUCache {
         n.right.left = temp;
         return n;
     }
-    
+      (()) 
     //Inserts a node right after the before pointer
     void insertNode(Node n, Node before){
         Node temp = before.right;

@@ -26,7 +26,7 @@ class Solution:
                 return i
         return -1
 """
-O(n) Solution. Use the fact that 
+O(n) Solution.  
 """
 class Solution:
     def findCelebrity(self, n):
