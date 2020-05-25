@@ -29,6 +29,30 @@ Basic lock. Will throw exception if try to release() when you don't have the loc
 Will block if you try to acquire() and someone else has the lock
 """
 
-import Lock
+#Implementation with try, finally block. Remember to release lock in the finally block
+class mythread(threading.Thread):
+    def __init__(self):
+        self.lock = threading.Lock()
+    def run(self):
+        try:
+            self.lock.acquire()
+            print(threading.current_thread)
+            time.sleep(2)
+        finally:
+            self.lock.release()
+
+"""
+Using locks without try catch finally block. Same thing as line 26
+"""
+lock = threading.Lock()
+with lock:
+    print("This is locked")
+
+"""
+Condition Variables
+wait() will sleep the thread until it is woken up by anther thread with notify
+notify() will wake up a sleeping thread
+"""
+
 
 
