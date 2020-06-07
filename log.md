@@ -8,7 +8,14 @@
 * Went down a rabbithole of the wrong technique, next time try to go breadth first
     * solution: At first don't sweat the details, think high-level first 
 
+### jun 7
+#### 2. Number of dice rolls with target sum 
+* Got this pretty good, but need to work on debugging dynamic programming questions
 
 #### Python
 * Use collections.Counter() to count things
-* Sorted works on dicts
+* Sorted works on dictionaries
+
+#### Dynamic programming
+* It helps to write out every possible state when you are not sure what the recurrance relation is
+* It helps to think of it in terms of the last step (burst balloons)
