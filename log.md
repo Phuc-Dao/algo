@@ -9,12 +9,35 @@
     * solution: At first don't sweat the details, think high-level first 
 
 ### jun 7
-#### 2. Number of dice rolls with target sum 
+#### (2) Number of dice rolls with target sum 
 * Got this pretty good, but need to work on debugging dynamic programming questions
+* Test components as you go instread of waiting til lthe end to test everything. This will actually make you faster !
+
+### jun 16
+#### (3) 1176. Diet Plan Performance
+* What I did wrong
+    - Handwaved solution and in the end wasted alot of time implementing the wrong solution 
+    - Tried to use a prefix sum solution even though it used fixed sliding window
+* Key takeway:
+    - Don't handwave your solution, really try to scrutinize it
+
+### jun 17
+#### (4) overlap rectangle
+* What I did wrong
+    - Tried coming up with an overly complex soluton
+    - Did not utilize the fact that they only gave two corners of the rectangle (this was used to determine where the triangle began and end)
+    - Got lost in all the edge cases
+* Key Takeaway:
+    - Problems with multiple cases try to draw all the cases quickly
+    - Utilize unique properties of the problem to come up with a solution 
 
 #### Python
 * Use collections.Counter() to count things
-* Sorted works on dictionaries
+* Sorted works on dictionaries to sort the keys
+* Slices create a shallow copy, and is noninclusive on the right side
+
+#### Sliding window
+* Understand when to use prefix sums and when to use regular sliding window (Tried to use prefix sum with problem 1176 which is wrong)
 
 #### Dynamic programming
 * It helps to write out every possible state when you are not sure what the recurrance relation is

@@ -12,7 +12,7 @@ class Producer(threading.Thread):
     def run(self):
         with cv:
             while n <= 5:
-                print("consuming the resource")
+                print("producing the resource")
                 n += 1
                 timer.sleep(1)
             cv.signal()            
@@ -24,6 +24,7 @@ class Consumer(threading.Thread):
                 timer.sleep(2)
                 cv.sleep()                
             print("consuming") 
+            n -= 1
             
 p = Producer()
 c = Consumer()           
