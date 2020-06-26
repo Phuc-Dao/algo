@@ -31,6 +31,21 @@
     - Problems with multiple cases try to draw all the cases quickly
     - Utilize unique properties of the problem to come up with a solution 
 
+### jun 18
+#### (5) two sum bst
+* What I did wrong
+    - Did traversal twice 
+* Key Takeaway:
+#### (6) Leaf similar Trees
+#### (7) Reverse and invert image 
+
+### jun 26
+#### (6) 88 merge sorted array
+* The crux of the problem was to recognize that you can insert at the end to preserve
+the ordering when you shift elements around
+* Key Takeaway:
+    - sometimes try inserting elements at the end of a list
+    
 #### Python
 * Use collections.Counter() to count things
 * Sorted works on dictionaries to sort the keys
@@ -42,3 +57,7 @@
 #### Dynamic programming
 * It helps to write out every possible state when you are not sure what the recurrance relation is
 * It helps to think of it in terms of the last step (burst balloons)
+
+#### Tricky problems (When you are absolutely stuck)
+* Look at every possible constraint/properties
+* Draw out the edge cases
