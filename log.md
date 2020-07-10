@@ -45,11 +45,24 @@
 the ordering when you shift elements around
 * Key Takeaway:
     - sometimes try inserting elements at the end of a list
-    
+
+### jun 29
+#### (7) 212. Word Search II
+* Solution involved TRIE + backtracking
+* Got really close just forgot to remove visited elements from backtracking
+
 #### Python
 * Use collections.Counter() to count things
 * Sorted works on dictionaries to sort the keys
 * Slices create a shallow copy, and is noninclusive on the right side
+* casting string to int (works with negative strings as well)
+```
+try:
+    int(some_string)
+    # do something if succeeds
+except ValueError:
+    # do something if not a valid string
+```
 
 #### Sliding window
 * Understand when to use prefix sums and when to use regular sliding window (Tried to use prefix sum with problem 1176 which is wrong)
@@ -58,6 +71,16 @@ the ordering when you shift elements around
 * It helps to write out every possible state when you are not sure what the recurrance relation is
 * It helps to think of it in terms of the last step (burst balloons)
 
+### Backtracking
+* Remember to add and remove whatever element you are trying to backtrack
+* Keep a buffer/builder of whatever you are trying to build. Example: phonebook problem
+
+
 #### Tricky problems (When you are absolutely stuck)
 * Look at every possible constraint/properties
 * Draw out the edge cases
+* Do a couple of exam problems
+
+
+TODO:
+1. Meeting scheduler -- try writing a couple of cases 
